@@ -1,0 +1,175 @@
+Couldn't open /home/hiogawa/code/others/godot/bin/godot.x11.tools.64.pck
+Couldn't open godot.x11.tools.64.pck
+OpenGL ES 3.0 Renderer: Mesa DRI Intel(R) HD Graphics 520 (Skylake GT2) 
+GLES3: max ubo light: 409
+GLES3: max ubo reflections: 455, ubo size: 144
+#define USE_TEXTURE_RECT
+
+
+Vertex Code:
+
+
+
+Fragment Globals:
+
+
+
+Fragment Code:
+
+
+Registered interface Native mobile
+#define USE_SOURCE_PANORAMA
+
+#define LOW_QUALITY
+
+#define USE_DUAL_PARABOLOID
+
+#define USE_DIRECT_WRITE
+
+
+Vertex Code:
+
+
+
+Fragment Globals:
+
+
+
+Fragment Code:
+
+
+#define USE_SOURCE_DUAL_PARABOLOID_ARRAY
+
+#define LOW_QUALITY
+
+#define USE_DUAL_PARABOLOID
+
+
+Vertex Code:
+
+
+
+Fragment Globals:
+
+
+
+Fragment Code:
+
+
+
+
+== SHADOW MAP RENDER: Light RID 155 ==
+fbo: 102, x: 0, y: 0, width: 2048, height: 2048
+transform: 1, 0, 0, 0, -0, 1, 0, -1, -0 - 0, 3, 0
+projection: 
+1, 0, 0, 0
+0, 1, 0, 0
+0, 0, -1.004008, -1
+0, 0, -0.02004, 0
+bias: 0.150000, normal_bias: 0.000000, dp_direction: 1.000000, zfar: 5.000000, flip_facing: 0
+#define RENDER_DEPTH
+
+#define VCT_QUALITY_HIGH
+
+#define SHADELESS
+
+
+Vertex Code:
+
+
+
+Fragment Globals:
+
+
+
+Fragment Code:
+
+
+======================================
+
+#define USE_FORWARD_LIGHTING
+
+#define USE_CONTACT_SHADOWS
+
+#define SHADOW_MODE_PCF_5
+
+#define VCT_QUALITY_HIGH
+
+CD #0: #define USE_MATERIAL
+
+CD #1: #define ENABLE_UV_INTERP
+
+
+Vertex Code:
+
+	{
+		uv_interp=((uv_interp*m_uv1_scale.xy)+m_uv1_offset.xy);
+	}
+
+
+Fragment Globals:
+
+uniform sampler2D m_texture_albedo;
+uniform sampler2D m_texture_metallic;
+uniform sampler2D m_texture_roughness;
+
+
+Fragment Code:
+
+	{
+		vec2 m_base_uv=uv_interp;
+		vec4 m_albedo_tex=texture(m_texture_albedo, m_base_uv);
+		albedo=(m_albedo.rgb*m_albedo_tex.rgb);
+		float m_metallic_tex=dot(texture(m_texture_metallic, m_base_uv), m_metallic_texture_channel);
+		metallic=(m_metallic_tex*m_metallic);
+		float m_roughness_tex=dot(texture(m_texture_roughness, m_base_uv), m_roughness_texture_channel);
+		roughness=(m_roughness_tex*m_roughness);
+		specular=m_specular;
+	}
+
+#define USE_FORWARD_LIGHTING
+
+#define USE_CONTACT_SHADOWS
+
+#define SHADOW_MODE_PCF_5
+
+#define VCT_QUALITY_HIGH
+
+
+Vertex Code:
+
+
+
+Fragment Globals:
+
+
+
+Fragment Code:
+
+
+
+Vertex Code:
+
+
+
+Fragment Globals:
+
+
+
+Fragment Code:
+
+
+scene_reloaded
+
+
+== SHADOW MAP RENDER: Light RID 171 ==
+fbo: 102, x: 0, y: 0, width: 2048, height: 2048
+transform: 1, 0, 0, 0, -0, 1, 0, -1, -0 - 0, 3, 0
+projection: 
+1, 0, 0, 0
+0, 1, 0, 0
+0, 0, -1.004008, -1
+0, 0, -0.02004, 0
+bias: 0.150000, normal_bias: 0.000000, dp_direction: 1.000000, zfar: 5.000000, flip_facing: 0
+======================================
+
